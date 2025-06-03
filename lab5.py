@@ -26,7 +26,7 @@ def filter(y, order, cutoff):
     sampling_rate = 1 / (t[1] - t[0])
     nyquist = 0.5 * sampling_rate
     normal_cutoff = cutoff / nyquist
-    b, a = butter(order, normal_cutoff, btype='low', analog=False)
+    b, a = butter(order, normal_cutoff, btype='low')
     return filtfilt(b, a, y)
 
 current_y = generate_y(default_amplitude, default_frequency, default_phi)
